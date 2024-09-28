@@ -4,7 +4,7 @@ import android.app.Application
 import dagger.hilt.android.HiltAndroidApp
 
 @HiltAndroidApp
-class VodleApplication : Application() {
+class MiracleMateApplication : Application() {
     override fun onCreate() {
         super.onCreate()
     }

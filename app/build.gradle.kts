@@ -96,7 +96,7 @@ dependencies {
     implementation(libs.okhttp)
     implementation(libs.okhttpLogging)
 
-//    implementation(project(":presentation"))
+    implementation(project(":presentation"))
     implementation(project(":domain"))
     implementation(project(":data"))
 }
