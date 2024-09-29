@@ -6,6 +6,7 @@ plugins {
     alias(libs.plugins.ktlintLibrary)
     alias(libs.plugins.hilt)
     id("kotlin-kapt")
+    id("com.google.gms.google-services")
 }
 
 val properties = Properties().apply {
@@ -27,6 +28,23 @@ android {
         vectorDrawables {
             useSupportLibrary = true
         }
+
+        buildConfigField(
+            "String",
+            "NAVER_LOGIN_CLIENT_ID",
+            "\"${properties["NAVER_LOGIN_CLIENT_ID"]}\""
+        )
+        buildConfigField(
+            "String",
+            "NAVER_LOGIN_CLIENT_SECRET",
+            "\"${properties["NAVER_LOGIN_CLIENT_SECRET"]}\""
+        )
+
+        buildConfigField(
+            "String",
+            "NAVER_LOGIN_CLIENT_NAME",
+            "\"${properties["NAVER_LOGIN_CLIENT_NAME"]}\""
+        )
     }
 
     buildTypes {
@@ -95,6 +113,10 @@ dependencies {
 
     implementation(libs.okhttp)
     implementation(libs.okhttpLogging)
+
+    implementation(platform("com.google.firebase:firebase-bom:33.3.0"))
+    implementation("com.google.firebase:firebase-analytics")
+    implementation("com.navercorp.nid:oauth:5.9.1")
 
     implementation(project(":presentation"))
     implementation(project(":domain"))

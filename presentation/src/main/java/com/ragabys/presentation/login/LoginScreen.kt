@@ -61,6 +61,8 @@ fun LoginScreen(
                     easing = LinearEasing
                 )
             )
+            //선을 다 그린 뒤 autologin 확인하기
+            viewModel.onTriggerEvent(LoginViewEvent.checkAutoLogin)
         }
     }
 

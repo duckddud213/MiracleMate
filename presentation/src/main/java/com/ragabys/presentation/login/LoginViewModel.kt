@@ -26,7 +26,11 @@ class LoginViewModel @Inject constructor(
 
     private suspend fun handleLoginViewEvent(event: LoginViewEvent) {
         when (event) {
-            is LoginViewEvent.initAnimationLoading -> {}
+            is LoginViewEvent.checkAutoLogin -> checkToken()
         }
+    }
+
+    private suspend fun checkToken(){
+
     }
 }

@@ -93,6 +93,7 @@ dependencies {
     implementation("androidx.compose.material:material-icons-extended:1.6.3")
     implementation(libs.glide)
     kapt(libs.glide.compiler)
+    implementation("com.navercorp.nid:oauth:5.9.1")
 
     implementation(project(":domain"))
 }
